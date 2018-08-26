@@ -3,16 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Browser } from 'protractor';
 import { SoloComponent } from './solo/solo.component';
 import { DuoComponent } from './duo/duo.component';
 import { HomeComponent } from './home/home.component';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HeaderService } from './header.service';
+import { RouterModule } from '@angular/router';
+
+import {Location} from '@angular/common';
 
 
 
@@ -30,9 +34,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatButtonModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    RouterModule,
   ],
-  providers: [],
+  providers: [HeaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

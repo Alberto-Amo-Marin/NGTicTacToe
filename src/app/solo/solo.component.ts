@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderService } from '../header.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-solo',
@@ -7,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SoloComponent implements OnInit {
 
-  constructor() { }
+  constructor(private location: Location,
+  private headerService: HeaderService) { }
 
   ngOnInit() {
   }

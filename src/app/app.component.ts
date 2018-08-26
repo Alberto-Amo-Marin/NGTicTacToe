@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import UIkit from 'uikit';
+import { HeaderService } from './header.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +10,18 @@ import UIkit from 'uikit';
 })
 export class AppComponent {
   title = 'app';
-  showAlert(): void {
-    UIkit.modal.alert('UIkit alert!');
+  constructor(public headerService: HeaderService,
+    public location: Location) { }
+
+  goBack(): void {
+    if (this.headerService.isAt('solo')) {
+      console.log('estamos en solo');
+      this.location.back();
+    }
+
+    if (this.headerService.isAt('duo')) {
+      this.location.back();
+    }
   }
+
 }
