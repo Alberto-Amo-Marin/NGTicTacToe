@@ -5,7 +5,7 @@ import {Location} from '@angular/common';
 @Component({
   selector: 'app-solo',
   templateUrl: './solo.component.html',
-  styleUrls: ['./solo.component.css']
+  styleUrls: ['./solo.component.scss']
 })
 export class SoloComponent implements OnInit {
 

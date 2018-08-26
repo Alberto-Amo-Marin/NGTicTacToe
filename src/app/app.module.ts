@@ -18,6 +18,8 @@ import { RouterModule } from '@angular/router';
 
 import {Location} from '@angular/common';
 
+import { DragulaModule } from 'ng2-dragula';
+
 
 
 @NgModule({
@@ -36,6 +38,7 @@ import {Location} from '@angular/common';
     MatToolbarModule,
     FlexLayoutModule,
     RouterModule,
+    DragulaModule.forRoot()
   ],
   providers: [HeaderService],
   bootstrap: [AppComponent]
