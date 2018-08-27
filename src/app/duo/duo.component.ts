@@ -16,6 +16,7 @@ export class DuoComponent implements OnInit {
   drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
+    if(ev.target.childNodes.length < 1)
     ev.target.appendChild(document.getElementById(data));
   }
 
