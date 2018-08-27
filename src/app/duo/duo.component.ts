@@ -12,20 +12,19 @@ export class DuoComponent implements OnInit {
   ngOnInit() {
   }
 
+  
+  drop(ev) {
+    ev.preventDefault();
+    var data = ev.dataTransfer.getData("text");
+    ev.target.appendChild(document.getElementById(data));
+  }
+
   allowDrop(ev) {
     ev.preventDefault();
   }
 
   drag(ev) {
     ev.dataTransfer.setData("text", ev.target.id);
-    console.log('cojo x');
-  }
-
-  drop(ev) {
-    ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
-    ev.target.appendChild(document.getElementById(data));
-    console.log('suelto x');
   }
 
 }
