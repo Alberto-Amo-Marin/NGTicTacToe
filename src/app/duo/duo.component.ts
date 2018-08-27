@@ -1,6 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { Location } from '@angular/common';
+import {MatDialog, MatDialogConfig} from "@angular/material";
+import { CoursedialogComponent } from './coursedialog/coursedialog.component';
+import { DialogService } from './dialog.service';
 
+
+export interface DialogData {
+  name: string;
+}
 
 @Component({
   selector: 'app-duo',
@@ -9,13 +16,24 @@ import { Location } from '@angular/common';
 })
 export class DuoComponent implements OnInit {
 
-  constructor(private location: Location) { }
+  constructor(private location: Location, public dialog: MatDialog, public dialogService: DialogService) { }
   
   public vector = new Array<number>(10);
   public move: number = 0;
+  public winner: boolean = false;
 
   ngOnInit() {
   }
+
+  openDialog() {
+
+    const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+
+    this.dialog.open(CoursedialogComponent, dialogConfig);
+}
 
 
   drop(ev) {
@@ -279,7 +297,10 @@ export class DuoComponent implements OnInit {
     //Use cases of winner for X player
     if(this.vector[1] == 1 && this.vector[2] == 1 && this.vector[3] == 1) {
       console.log('ganan x fila1');
-      this.reset();
+      this.winner = true;
+      //this.reset();
+      this.dialogService.setWinner(' Player 1')
+      this.openDialog();
     }
 
     if(this.vector[4] == 1 && this.vector[5] == 1 && this.vector[6] == 1) {
@@ -359,3 +380,5 @@ export class DuoComponent implements OnInit {
   }
 
 }
+
+

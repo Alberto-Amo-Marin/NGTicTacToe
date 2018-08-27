@@ -20,14 +20,20 @@ import {Location} from '@angular/common';
 
 import { DragulaModule } from 'ng2-dragula';
 
+import {MatDialogModule} from '@angular/material/dialog';
+import { CoursedialogComponent } from './duo/coursedialog/coursedialog.component';
+
 
 
 @NgModule({
+  exports: [MatDialogModule],
+
   declarations: [
     AppComponent,
     SoloComponent,
     DuoComponent,
-    HomeComponent
+    HomeComponent,
+    CoursedialogComponent
   ],
   imports: [
     BrowserModule,
@@ -38,9 +44,11 @@ import { DragulaModule } from 'ng2-dragula';
     MatToolbarModule,
     FlexLayoutModule,
     RouterModule,
-    DragulaModule.forRoot()
+    DragulaModule.forRoot(),
+    MatDialogModule
   ],
   providers: [HeaderService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [CoursedialogComponent]
 })
 export class AppModule { }
