@@ -18,8 +18,6 @@ import { RouterModule } from '@angular/router';
 
 import {Location} from '@angular/common';
 
-import { DragulaModule } from 'ng2-dragula';
-
 import {MatDialogModule} from '@angular/material/dialog';
 import { CoursedialogComponent } from './duo/coursedialog/coursedialog.component';
 
@@ -44,7 +42,6 @@ import { CoursedialogComponent } from './duo/coursedialog/coursedialog.component
     MatToolbarModule,
     FlexLayoutModule,
     RouterModule,
-    DragulaModule.forRoot(),
     MatDialogModule
   ],
   providers: [HeaderService],
