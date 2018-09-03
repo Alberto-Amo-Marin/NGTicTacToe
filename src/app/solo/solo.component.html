@@ -9,8 +9,12 @@
     <div class="game-board" fxLayout="column">
       <h1 class="game-title">Game Board</h1>
       <div fxLayout="row" class="game-row" fxLayoutAlign="center">
-        <div id="b1" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card uk-card-default uk-card-body game-block"></div>
-        <div id="b2" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card uk-card-default uk-card-body game-block"></div>
+        <div id="b1" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card uk-card-default uk-card-body game-block">
+            <span *ngIf="b1">🔵</span>
+        </div>
+        <div id="b2" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card uk-card-default uk-card-body game-block">
+            <span *ngIf="b1">🔵</span>
+        </div>
         <div id="b3" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card uk-card-default uk-card-body game-block"></div>
       </div>
       
@@ -29,7 +33,7 @@
     </div>
   
     <div class="o-shape" fxLayout="column" fxLayoutAlign="center center">
-        <h1>Player 2</h1>
+        <h1>CPU</h1>
       <span *ngIf="show1" id="o1" [draggable]="false" (dragstart)="drag($event)">🔵</span>
       <span *ngIf="show2" id="o2" [draggable]="false" (dragstart)="drag($event)">🔵</span>
       <span *ngIf="show3" id="o3" [draggable]="false" (dragstart)="drag($event)">🔵</span>

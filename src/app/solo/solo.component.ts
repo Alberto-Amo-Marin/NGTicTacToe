@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderService } from '../header.service';
 import {Location} from '@angular/common';
-import { DialogService } from '../duo/dialog.service';
 import { MatDialogConfig, MatDialog } from '@angular/material';
+import { DialogService } from '../duo/dialog.service';
 import { CoursedialogComponent } from '../duo/coursedialog/coursedialog.component';
+
 
 @Component({
   selector: 'app-solo',
