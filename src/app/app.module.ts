@@ -20,6 +20,7 @@ import {Location} from '@angular/common';
 
 import {MatDialogModule} from '@angular/material/dialog';
 import { CoursedialogComponent } from './duo/coursedialog/coursedialog.component';
+import { MatDividerModule } from '@angular/material';
 
 
 
@@ -42,7 +43,8 @@ import { CoursedialogComponent } from './duo/coursedialog/coursedialog.component
     MatToolbarModule,
     FlexLayoutModule,
     RouterModule,
-    MatDialogModule
+    MatDialogModule,
+    MatDividerModule
   ],
   providers: [HeaderService],
   bootstrap: [AppComponent],

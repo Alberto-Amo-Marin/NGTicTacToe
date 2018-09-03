@@ -1,5 +1,6 @@
 .body {
     height: 90%;
+    
 }
 
 .x-shape {
@@ -27,12 +28,27 @@ span {
     width: 100%;
 }
 
-// .uk-card-default {
-//     width: 20%;
-//     height: 61%;
-// }
-
 .game-row {
     width: 100%;
     height: 30%;
 }
+
+.uk-card {
+    width: 30%;
+}
+
+.uk-card-default {
+    box-shadow: inset 0 0 10px #000000;
+}
+
+.game-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-title {
+    text-align: center;
+}
+
+
