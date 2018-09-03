@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HeaderService } from '../header.service';
-import {Location} from '@angular/common';
+import { Location } from '@angular/common';
 import { MatDialogConfig, MatDialog } from '@angular/material';
 import { DialogService } from '../duo/dialog.service';
 import { CoursedialogComponent } from '../duo/coursedialog/coursedialog.component';
@@ -17,8 +17,18 @@ export class SoloComponent implements OnInit {
   public show2: boolean = true;
   public show3: boolean = true;
 
+  public b1: boolean = false;
+  public b2: boolean = false;
+  public b3: boolean = false;
+  public b4: boolean = false;
+  public b5: boolean = false;
+  public b6: boolean = false;
+  public b7: boolean = false;
+  public b8: boolean = false;
+  public b9: boolean = false;
+
   constructor(private location: Location,
-  private headerService: HeaderService, private dialogService: DialogService, public dialog: MatDialog) { }
+    private headerService: HeaderService, private dialogService: DialogService, public dialog: MatDialog) { }
 
   public vector = new Array<number>(10);
   public move: number = 0;
@@ -41,7 +51,7 @@ export class SoloComponent implements OnInit {
     dialogConfig.autoFocus = true;
 
     this.dialog.open(CoursedialogComponent, dialogConfig);
- }
+  }
 
 
   drop(ev) {
@@ -50,6 +60,7 @@ export class SoloComponent implements OnInit {
     if (ev.target.childNodes.length < 1) {
       ev.target.appendChild(document.getElementById(data));
       this.setVectorValues(ev.target.id, data);
+      this.setValueO();
     }
   }
 
@@ -57,7 +68,6 @@ export class SoloComponent implements OnInit {
     console.log('el turno vale', this.turn)
     if (this.turn % 2 == 0) {
       console.log('evento par');
-      this.move_y = false;
       this.move_x = true;
       ev.dataTransfer.setData("text", ev.target.id);
       this.turn = this.turn + 1;
@@ -65,11 +75,59 @@ export class SoloComponent implements OnInit {
 
     else {
       console.log('evento impar');
-      this.move_y = true;
       this.move_x = false;
       ev.dataTransfer.setData("text", ev.target.id);
       this.turn = this.turn + 1;
     }
+  }
+
+  generateRandom(): number {
+    return Math.floor(Math.random() * 9) + 1;
+  }
+
+  setValueO() {
+    var number;
+    number = this.generateRandom();
+    console.log('el numero es: ', number);
+
+    if (this.vector[number] == 1 || this.vector[number] == 2) {
+      this.setValueO();
+    }
+
+    else {
+      this.vector[number] = 2;
+
+      switch (number) {
+        case '1':
+          this.b1 = true;
+
+        case '2':
+          this.b2 = true;
+
+        case '3':
+          this.b3 = true;
+
+        case '4':
+          this.b4 = true;
+
+        case '5':
+          this.b6 = true;
+
+        case '6':
+          this.b6 = true;
+
+        case '7':
+          this.b7 = true;
+
+        case '8':
+          this.b8 = true;
+
+        case '9':
+          this.b9 = true;
+
+      }
+    }
+
   }
 
 
