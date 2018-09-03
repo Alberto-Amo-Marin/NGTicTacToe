@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Location } from '@angular/common';
-import {MatDialog, MatDialogConfig} from "@angular/material";
+import { MatDialog, MatDialogConfig } from "@angular/material";
 import { CoursedialogComponent } from './coursedialog/coursedialog.component';
 import { DialogService } from './dialog.service';
 
@@ -17,12 +17,14 @@ export interface DialogData {
 export class DuoComponent implements OnInit {
 
   constructor(private location: Location, public dialog: MatDialog, public dialogService: DialogService) { }
-  
+
   public vector = new Array<number>(10);
   public move: number = 0;
   public winner: boolean = false;
+  public turn: number;
 
   ngOnInit() {
+    this.turn = 0;
   }
 
   openDialog() {
@@ -33,13 +35,15 @@ export class DuoComponent implements OnInit {
     dialogConfig.autoFocus = true;
 
     this.dialog.open(CoursedialogComponent, dialogConfig);
-}
+  }
 
 
   drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     if (ev.target.childNodes.length < 1) {
+      this.turn++;
+      console.log(this.turn);
       ev.target.appendChild(document.getElementById(data));
       this.setVectorValues(ev.target.id, data);
     }
@@ -48,27 +52,27 @@ export class DuoComponent implements OnInit {
   setVectorValues(id: string, data: string) {
     if (id == "b1") {
 
-      if(data == "x1") {
+      if (data == "x1") {
         this.vector[1] = 1;
       }
 
-      if(data == "x2") {
+      if (data == "x2") {
         this.vector[1] = 1;
       }
 
-      if(data == "x3") {
+      if (data == "x3") {
         this.vector[1] = 1;
       }
 
-      if(data == "o1") {
+      if (data == "o1") {
         this.vector[1] = 2;
       }
 
-      if(data == "o2") {
+      if (data == "o2") {
         this.vector[1] = 2;
       }
 
-      if(data == "o3") {
+      if (data == "o3") {
         this.vector[1] = 2;
       }
 
@@ -76,216 +80,216 @@ export class DuoComponent implements OnInit {
     }
 
     if (id == "b2") {
-      if(data == "x1") {
+      if (data == "x1") {
         this.vector[2] = 1;
       }
 
-      if(data == "x2") {
+      if (data == "x2") {
         this.vector[2] = 1;
       }
 
-      if(data == "x3") {
+      if (data == "x3") {
         this.vector[2] = 1;
       }
 
-      if(data == "o1") {
+      if (data == "o1") {
         this.vector[2] = 2;
       }
 
-      if(data == "o2") {
+      if (data == "o2") {
         this.vector[2] = 2;
       }
 
-      if(data == "o3") {
+      if (data == "o3") {
         this.vector[2] = 2;
       }
-      
+
     }
 
     if (id == "b3") {
-      if(data == "x1") {
+      if (data == "x1") {
         this.vector[3] = 1;
       }
 
-      if(data == "x2") {
+      if (data == "x2") {
         this.vector[3] = 1;
       }
 
-      if(data == "x3") {
+      if (data == "x3") {
         this.vector[3] = 1;
       }
 
-      if(data == "o1") {
+      if (data == "o1") {
         this.vector[3] = 2;
       }
 
-      if(data == "o2") {
+      if (data == "o2") {
         this.vector[3] = 2;
       }
 
-      if(data == "o3") {
+      if (data == "o3") {
         this.vector[3] = 2;
       }
-      
+
     }
 
     if (id == "b4") {
-      if(data == "x1") {
+      if (data == "x1") {
         this.vector[4] = 1;
       }
 
-      if(data == "x2") {
+      if (data == "x2") {
         this.vector[4] = 1;
       }
 
-      if(data == "x3") {
+      if (data == "x3") {
         this.vector[4] = 1;
       }
 
-      if(data == "o1") {
+      if (data == "o1") {
         this.vector[4] = 2;
       }
 
-      if(data == "o2") {
+      if (data == "o2") {
         this.vector[4] = 2;
       }
 
-      if(data == "o3") {
+      if (data == "o3") {
         this.vector[4] = 2;
       }
 
     }
 
     if (id == "b5") {
-      if(data == "x1") {
+      if (data == "x1") {
         this.vector[5] = 1;
       }
 
-      if(data == "x2") {
+      if (data == "x2") {
         this.vector[5] = 1;
       }
 
-      if(data == "x3") {
+      if (data == "x3") {
         this.vector[5] = 1;
       }
 
-      if(data == "o1") {
+      if (data == "o1") {
         this.vector[5] = 2;
       }
 
-      if(data == "o2") {
+      if (data == "o2") {
         this.vector[5] = 2;
       }
 
-      if(data == "o3") {
+      if (data == "o3") {
         this.vector[5] = 2;
       }
 
     }
 
     if (id == "b6") {
-      if(data == "x1") {
+      if (data == "x1") {
         this.vector[6] = 1;
       }
 
-      if(data == "x2") {
+      if (data == "x2") {
         this.vector[6] = 1;
       }
 
-      if(data == "x3") {
+      if (data == "x3") {
         this.vector[6] = 1;
       }
 
-      if(data == "o1") {
+      if (data == "o1") {
         this.vector[6] = 2;
       }
 
-      if(data == "o2") {
+      if (data == "o2") {
         this.vector[6] = 2;
       }
 
-      if(data == "o3") {
+      if (data == "o3") {
         this.vector[6] = 2;
       }
 
     }
 
     if (id == "b7") {
-      if(data == "x1") {
+      if (data == "x1") {
         this.vector[7] = 1;
       }
 
-      if(data == "x2") {
+      if (data == "x2") {
         this.vector[7] = 1;
       }
 
-      if(data == "x3") {
+      if (data == "x3") {
         this.vector[7] = 1;
       }
 
-      if(data == "o1") {
+      if (data == "o1") {
         this.vector[7] = 2;
       }
 
-      if(data == "o2") {
+      if (data == "o2") {
         this.vector[7] = 2;
       }
 
-      if(data == "o3") {
+      if (data == "o3") {
         this.vector[7] = 2;
       }
 
     }
 
     if (id == "b8") {
-      if(data == "x1") {
+      if (data == "x1") {
         this.vector[8] = 1;
       }
 
-      if(data == "x2") {
+      if (data == "x2") {
         this.vector[8] = 1;
       }
 
-      if(data == "x3") {
+      if (data == "x3") {
         this.vector[8] = 1;
       }
 
-      if(data == "o1") {
+      if (data == "o1") {
         this.vector[8] = 2;
       }
 
-      if(data == "o2") {
+      if (data == "o2") {
         this.vector[8] = 2;
       }
 
-      if(data == "o3") {
+      if (data == "o3") {
         this.vector[8] = 2;
       }
 
     }
 
     if (id == "b9") {
-      if(data == "x1") {
+      if (data == "x1") {
         this.vector[9] = 1;
       }
 
-      if(data == "x2") {
+      if (data == "x2") {
         this.vector[9] = 1;
       }
 
-      if(data == "x3") {
+      if (data == "x3") {
         this.vector[9] = 1;
       }
 
-      if(data == "o1") {
+      if (data == "o1") {
         this.vector[9] = 2;
       }
 
-      if(data == "o2") {
+      if (data == "o2") {
         this.vector[9] = 2;
       }
 
-      if(data == "o3") {
+      if (data == "o3") {
         this.vector[9] = 2;
       }
     }
@@ -295,7 +299,7 @@ export class DuoComponent implements OnInit {
 
   checkWin() {
     //Use cases of winner for X player
-    if(this.vector[1] == 1 && this.vector[2] == 1 && this.vector[3] == 1) {
+    if (this.vector[1] == 1 && this.vector[2] == 1 && this.vector[3] == 1) {
       console.log('ganan x fila1');
       this.winner = true;
       //this.reset();
@@ -303,7 +307,7 @@ export class DuoComponent implements OnInit {
       this.openDialog();
     }
 
-    if(this.vector[4] == 1 && this.vector[5] == 1 && this.vector[6] == 1) {
+    if (this.vector[4] == 1 && this.vector[5] == 1 && this.vector[6] == 1) {
       console.log('ganan x fila2');
       this.winner = true;
       //this.reset();
@@ -311,7 +315,7 @@ export class DuoComponent implements OnInit {
       this.openDialog();
     }
 
-    if(this.vector[7] == 1 && this.vector[8] == 1 && this.vector[9] == 1) {
+    if (this.vector[7] == 1 && this.vector[8] == 1 && this.vector[9] == 1) {
       console.log('ganan x fila3');
       this.winner = true;
       //this.reset();
@@ -319,7 +323,7 @@ export class DuoComponent implements OnInit {
       this.openDialog();
     }
 
-    if(this.vector[1] == 1 && this.vector[4] == 1 && this.vector[7] == 1) {
+    if (this.vector[1] == 1 && this.vector[4] == 1 && this.vector[7] == 1) {
       console.log('ganan x col1');
       this.winner = true;
       //this.reset();
@@ -327,7 +331,7 @@ export class DuoComponent implements OnInit {
       this.openDialog();
     }
 
-    if(this.vector[2] == 1 && this.vector[5] == 1 && this.vector[8] == 1) {
+    if (this.vector[2] == 1 && this.vector[5] == 1 && this.vector[8] == 1) {
       console.log('ganan x col2');
       this.winner = true;
       //this.reset();
@@ -335,7 +339,7 @@ export class DuoComponent implements OnInit {
       this.openDialog();
     }
 
-    if(this.vector[3] == 1 && this.vector[6] == 1 && this.vector[9] == 1) {
+    if (this.vector[3] == 1 && this.vector[6] == 1 && this.vector[9] == 1) {
       console.log('ganan x col3');
       this.winner = true;
       //this.reset();
@@ -343,7 +347,7 @@ export class DuoComponent implements OnInit {
       this.openDialog();
     }
 
-    if(this.vector[1] == 1 && this.vector[5] == 1 && this.vector[9] == 1) {
+    if (this.vector[1] == 1 && this.vector[5] == 1 && this.vector[9] == 1) {
       console.log('ganan x diag1');
       this.winner = true;
       //this.reset();
@@ -351,7 +355,7 @@ export class DuoComponent implements OnInit {
       this.openDialog();
     }
 
-    if(this.vector[3] == 1 && this.vector[5] == 1 && this.vector[7] == 1) {
+    if (this.vector[3] == 1 && this.vector[5] == 1 && this.vector[7] == 1) {
       console.log('ganan x diag2');
       this.winner = true;
       //this.reset();
@@ -361,7 +365,7 @@ export class DuoComponent implements OnInit {
 
 
     //Use cases of winner for O player
-    if(this.vector[1] == 2 && this.vector[2] == 2 && this.vector[3] == 2) {
+    if (this.vector[1] == 2 && this.vector[2] == 2 && this.vector[3] == 2) {
       console.log('ganan o fila1');
       this.winner = true;
       //this.reset();
@@ -369,7 +373,7 @@ export class DuoComponent implements OnInit {
       this.openDialog();
     }
 
-    if(this.vector[4] == 2 && this.vector[5] == 2 && this.vector[6] == 2) {
+    if (this.vector[4] == 2 && this.vector[5] == 2 && this.vector[6] == 2) {
       console.log('ganan o fila2');
       this.winner = true;
       //this.reset();
@@ -377,7 +381,7 @@ export class DuoComponent implements OnInit {
       this.openDialog();
     }
 
-    if(this.vector[7] == 2 && this.vector[8] == 2 && this.vector[9] == 2) {
+    if (this.vector[7] == 2 && this.vector[8] == 2 && this.vector[9] == 2) {
       console.log('ganan o fila3');
       this.winner = true;
       //this.reset();
@@ -385,7 +389,7 @@ export class DuoComponent implements OnInit {
       this.openDialog();
     }
 
-    if(this.vector[1] == 2 && this.vector[4] == 2 && this.vector[7] == 2) {
+    if (this.vector[1] == 2 && this.vector[4] == 2 && this.vector[7] == 2) {
       console.log('ganan o col1');
       this.winner = true;
       //this.reset();
@@ -393,7 +397,7 @@ export class DuoComponent implements OnInit {
       this.openDialog();
     }
 
-    if(this.vector[2] == 2 && this.vector[5] == 2 && this.vector[8] == 2) {
+    if (this.vector[2] == 2 && this.vector[5] == 2 && this.vector[8] == 2) {
       console.log('ganan o col2');
       this.winner = true;
       //this.reset();
@@ -401,7 +405,7 @@ export class DuoComponent implements OnInit {
       this.openDialog();
     }
 
-    if(this.vector[3] == 2 && this.vector[6] == 2 && this.vector[9] == 2) {
+    if (this.vector[3] == 2 && this.vector[6] == 2 && this.vector[9] == 2) {
       console.log('ganan o col3');
       this.winner = true;
       //this.reset();
@@ -409,7 +413,7 @@ export class DuoComponent implements OnInit {
       this.openDialog();
     }
 
-    if(this.vector[1] == 2 && this.vector[5] == 2 && this.vector[9] == 2) {
+    if (this.vector[1] == 2 && this.vector[5] == 2 && this.vector[9] == 2) {
       console.log('ganan o diag1');
       this.winner = true;
       //this.reset();
@@ -417,7 +421,7 @@ export class DuoComponent implements OnInit {
       this.openDialog();
     }
 
-    if(this.vector[3] == 2 && this.vector[5] == 2 && this.vector[7] == 2) {
+    if (this.vector[3] == 2 && this.vector[5] == 2 && this.vector[7] == 2) {
       console.log('ganan o diag2');
       this.winner = true;
       //this.reset();
