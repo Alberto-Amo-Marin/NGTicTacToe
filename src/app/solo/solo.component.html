@@ -1,41 +1,37 @@
-<!-- <div class="body" fxLayout="row" fxLayoutAlign="space-around start">
-  <div class="x-shape" fxLayout="column">
-    <span draggable="true"
-    ondragstart="drag(event)">✖️</span>
-    <span draggable="true"
-    ondragstart="drag(event)">✖️</span>
-    <span draggable="true"
-    ondragstart="drag(event)">✖️</span>
-  </div>
-
-  <div class="game-board" fxLayout="column" fxLayoutAlign="center center">
-    <div fxLayout="row">
-      <div class="uk-card uk-card-default uk-card-body" ondrop="drop(event)">Item 1</div>
-      <div class="uk-card uk-card-default uk-card-body" ondrop="drop(event)">Item 1</div>
-      <div class="uk-card uk-card-default uk-card-body" ondrop="drop(event)">Item 1</div>
+<div class="body" fxLayout="row" fxLayoutAlign="space-around start">
+    <div class="x-shape container" fxLayout="column" fxLayoutAlign="center center">
+      <h1>Player 1</h1>
+      <span id="x1" [draggable]="move_x" (dragstart)="drag($event)">✖️</span>
+      <span id="x2" [draggable]="move_x" (dragstart)="drag($event)">✖️</span>
+      <span id="x3" [draggable]="move_x" (dragstart)="drag($event)">✖️</span>
     </div>
-
-    <div fxLayout="row">
-      <div class="uk-card uk-card-default uk-card-body" ondrop="drop(event)">Item 1</div>
-      <div class="uk-card uk-card-default uk-card-body" ondrop="drop(event)">Item 1</div>
-      <div class="uk-card uk-card-default uk-card-body" ondrop="drop(event)">Item 1</div>
+  
+    <div class="game-board" fxLayout="column">
+      <h1 class="game-title">Game Board</h1>
+      <div fxLayout="row" class="game-row" fxLayoutAlign="center">
+        <div id="b1" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card uk-card-default uk-card-body game-block"></div>
+        <div id="b2" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card uk-card-default uk-card-body game-block"></div>
+        <div id="b3" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card uk-card-default uk-card-body game-block"></div>
+      </div>
+      
+      <div fxLayout="row" class="game-row" fxLayoutAlign="center">
+        <div id="b4" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card uk-card-default uk-card-body game-block"></div>
+        <div id="b5" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card uk-card-default uk-card-body game-block"></div>
+        <div id="b6" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card uk-card-default uk-card-body game-block"></div>
+      </div>
+    
+      <div fxLayout="row" class="game-row" fxLayoutAlign="center">
+        <div id="b7" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card uk-card-default uk-card-body game-block"></div>
+        <div id="b8" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card uk-card-default uk-card-body game-block"></div>
+        <div id="b9" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card uk-card-default uk-card-body game-block"></div>
+      </div>
+      
     </div>
-
-    <div fxLayout="row">
-      <div class="uk-card uk-card-default uk-card-body" ondrop="drop(event)">Item 1</div>
-      <div class="uk-card uk-card-default uk-card-body" ondrop="drop(event)">Item 1</div>
-      <div class="uk-card uk-card-default uk-card-body" ondrop="drop(event)">Item 1</div>
-    </div>
-
+  
+    <div class="o-shape" fxLayout="column" fxLayoutAlign="center center">
+        <h1>Player 2</h1>
+      <span *ngIf="show1" id="o1" [draggable]="false" (dragstart)="drag($event)">🔵</span>
+      <span *ngIf="show2" id="o2" [draggable]="false" (dragstart)="drag($event)">🔵</span>
+      <span *ngIf="show3" id="o3" [draggable]="false" (dragstart)="drag($event)">🔵</span>
+      </div>
   </div>
-
-  <div class="o-shape" fxLayout="column">
-    <span draggable="true"
-    ondragstart="drag(event)">🔵</span>
-    <span draggable="true"
-    ondragstart="drag(event)">🔵</span>
-    <span draggable="true"
-    ondragstart="drag(event)">🔵</span>
-
-  </div>
-</div> -->
