@@ -305,64 +305,124 @@ export class DuoComponent implements OnInit {
 
     if(this.vector[4] == 1 && this.vector[5] == 1 && this.vector[6] == 1) {
       console.log('ganan x fila2');
+      this.winner = true;
+      //this.reset();
+      this.dialogService.setWinner(' Player 1')
+      this.openDialog();
     }
 
     if(this.vector[7] == 1 && this.vector[8] == 1 && this.vector[9] == 1) {
       console.log('ganan x fila3');
+      this.winner = true;
+      //this.reset();
+      this.dialogService.setWinner(' Player 1')
+      this.openDialog();
     }
 
     if(this.vector[1] == 1 && this.vector[4] == 1 && this.vector[7] == 1) {
       console.log('ganan x col1');
+      this.winner = true;
+      //this.reset();
+      this.dialogService.setWinner(' Player 1')
+      this.openDialog();
     }
 
     if(this.vector[2] == 1 && this.vector[5] == 1 && this.vector[8] == 1) {
       console.log('ganan x col2');
+      this.winner = true;
+      //this.reset();
+      this.dialogService.setWinner(' Player 1')
+      this.openDialog();
     }
 
     if(this.vector[3] == 1 && this.vector[6] == 1 && this.vector[9] == 1) {
       console.log('ganan x col3');
+      this.winner = true;
+      //this.reset();
+      this.dialogService.setWinner(' Player 1')
+      this.openDialog();
     }
 
     if(this.vector[1] == 1 && this.vector[5] == 1 && this.vector[9] == 1) {
       console.log('ganan x diag1');
+      this.winner = true;
+      //this.reset();
+      this.dialogService.setWinner(' Player 1')
+      this.openDialog();
     }
 
     if(this.vector[3] == 1 && this.vector[5] == 1 && this.vector[7] == 1) {
       console.log('ganan x diag2');
+      this.winner = true;
+      //this.reset();
+      this.dialogService.setWinner(' Player 1')
+      this.openDialog();
     }
 
 
     //Use cases of winner for O player
     if(this.vector[1] == 2 && this.vector[2] == 2 && this.vector[3] == 2) {
       console.log('ganan o fila1');
+      this.winner = true;
+      //this.reset();
+      this.dialogService.setWinner(' Player 2')
+      this.openDialog();
     }
 
     if(this.vector[4] == 2 && this.vector[5] == 2 && this.vector[6] == 2) {
       console.log('ganan o fila2');
+      this.winner = true;
+      //this.reset();
+      this.dialogService.setWinner(' Player 2')
+      this.openDialog();
     }
 
     if(this.vector[7] == 2 && this.vector[8] == 2 && this.vector[9] == 2) {
       console.log('ganan o fila3');
+      this.winner = true;
+      //this.reset();
+      this.dialogService.setWinner(' Player 2')
+      this.openDialog();
     }
 
     if(this.vector[1] == 2 && this.vector[4] == 2 && this.vector[7] == 2) {
       console.log('ganan o col1');
+      this.winner = true;
+      //this.reset();
+      this.dialogService.setWinner(' Player 2')
+      this.openDialog();
     }
 
     if(this.vector[2] == 2 && this.vector[5] == 2 && this.vector[8] == 2) {
       console.log('ganan o col2');
+      this.winner = true;
+      //this.reset();
+      this.dialogService.setWinner(' Player 2')
+      this.openDialog();
     }
 
     if(this.vector[3] == 2 && this.vector[6] == 2 && this.vector[9] == 2) {
       console.log('ganan o col3');
+      this.winner = true;
+      //this.reset();
+      this.dialogService.setWinner(' Player 2')
+      this.openDialog();
     }
 
     if(this.vector[1] == 2 && this.vector[5] == 2 && this.vector[9] == 2) {
       console.log('ganan o diag1');
+      this.winner = true;
+      //this.reset();
+      this.dialogService.setWinner(' Player 2')
+      this.openDialog();
     }
 
     if(this.vector[3] == 2 && this.vector[5] == 2 && this.vector[7] == 2) {
       console.log('ganan o diag2');
+      this.winner = true;
+      //this.reset();
+      this.dialogService.setWinner(' Player 2')
+      this.openDialog();
     }
   }
 
