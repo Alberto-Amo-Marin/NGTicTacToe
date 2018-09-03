@@ -3,6 +3,7 @@ import { Location } from '@angular/common';
 import { MatDialog, MatDialogConfig } from "@angular/material";
 import { CoursedialogComponent } from './coursedialog/coursedialog.component';
 import { DialogService } from './dialog.service';
+import { ResetService } from '../reset.service';
 
 
 export interface DialogData {
@@ -16,15 +17,19 @@ export interface DialogData {
 })
 export class DuoComponent implements OnInit {
 
-  constructor(private location: Location, public dialog: MatDialog, public dialogService: DialogService) { }
+  constructor(private location: Location, public dialog: MatDialog, public dialogService: DialogService, public resetService: ResetService) { }
 
   public vector = new Array<number>(10);
   public move: number = 0;
   public winner: boolean = false;
   public turn: number;
+  public move_x: boolean;
+  public move_y: boolean;
 
   ngOnInit() {
-    this.turn = 0;
+    this.turn = 1;
+    this.move_x = true;
+    this.move_y = false;
   }
 
   openDialog() {
@@ -35,19 +40,38 @@ export class DuoComponent implements OnInit {
     dialogConfig.autoFocus = true;
 
     this.dialog.open(CoursedialogComponent, dialogConfig);
-  }
+ }
 
 
   drop(ev) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData("text");
     if (ev.target.childNodes.length < 1) {
-      this.turn++;
-      console.log(this.turn);
       ev.target.appendChild(document.getElementById(data));
       this.setVectorValues(ev.target.id, data);
     }
   }
+
+  drag(ev) {
+    console.log('el turno vale', this.turn)
+    if (this.turn % 2 == 0) {
+      console.log('evento par');
+      this.move_y = false;
+      this.move_x = true;
+      ev.dataTransfer.setData("text", ev.target.id);
+      this.turn = this.turn + 1;
+    }
+
+    else {
+      console.log('evento impar');
+      this.move_y = true;
+      this.move_x = false;
+      ev.dataTransfer.setData("text", ev.target.id);
+      this.turn = this.turn + 1;
+    }
+  }
+
+
 
   setVectorValues(id: string, data: string) {
     if (id == "b1") {
@@ -303,7 +327,7 @@ export class DuoComponent implements OnInit {
       console.log('ganan x fila1');
       this.winner = true;
       //this.reset();
-      this.dialogService.setWinner(' Player 1')
+      this.dialogService.setWinner(' Player 1');
       this.openDialog();
     }
 
@@ -351,7 +375,7 @@ export class DuoComponent implements OnInit {
       console.log('ganan x diag1');
       this.winner = true;
       //this.reset();
-      this.dialogService.setWinner(' Player 1')
+      this.dialogService.setWinner(' Player 1');
       this.openDialog();
     }
 
@@ -439,9 +463,7 @@ export class DuoComponent implements OnInit {
     ev.preventDefault();
   }
 
-  drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
-  }
+
 
 }
 

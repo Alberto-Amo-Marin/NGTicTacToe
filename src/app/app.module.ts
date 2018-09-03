@@ -21,6 +21,7 @@ import {Location} from '@angular/common';
 import {MatDialogModule} from '@angular/material/dialog';
 import { CoursedialogComponent } from './duo/coursedialog/coursedialog.component';
 import { MatDividerModule } from '@angular/material';
+import { ResetService } from './reset.service';
 
 
 
@@ -46,7 +47,7 @@ import { MatDividerModule } from '@angular/material';
     MatDialogModule,
     MatDividerModule
   ],
-  providers: [HeaderService],
+  providers: [HeaderService, ResetService],
   bootstrap: [AppComponent],
   entryComponents: [CoursedialogComponent]
 })

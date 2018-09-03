@@ -1,9 +1,9 @@
 <div class="body" fxLayout="row" fxLayoutAlign="space-around start">
   <div class="x-shape container" fxLayout="column" fxLayoutAlign="center center">
     <h1>Player 1</h1>
-    <span id="x1" draggable="true" (dragstart)="drag($event)">✖️</span>
-    <span id="x2" draggable="true" (dragstart)="drag($event)">✖️</span>
-    <span id="x3" draggable="true" (dragstart)="drag($event)">✖️</span>
+    <span id="x1" [draggable]="move_x" (dragstart)="drag($event)">✖️</span>
+    <span id="x2" [draggable]="move_x" (dragstart)="drag($event)">✖️</span>
+    <span id="x3" [draggable]="move_x" (dragstart)="drag($event)">✖️</span>
   </div>
 
   <div class="game-board" fxLayout="column">
@@ -30,9 +30,9 @@
 
   <div class="o-shape" fxLayout="column" fxLayoutAlign="center center">
       <h1>Player 2</h1>
-    <span id="o1" draggable="true" (dragstart)="drag($event)">🔵</span>
-    <span id="o2" draggable="true" (dragstart)="drag($event)">🔵</span>
-    <span id="o3" draggable="true" (dragstart)="drag($event)">🔵</span>
+    <span id="o1" [draggable]="move_y" (dragstart)="drag($event)">🔵</span>
+    <span id="o2" [draggable]="move_y" (dragstart)="drag($event)">🔵</span>
+    <span id="o3" [draggable]="move_y" (dragstart)="drag($event)">🔵</span>
 
   </div>
 </div>
