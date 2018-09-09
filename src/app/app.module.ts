@@ -20,7 +20,7 @@ import {Location} from '@angular/common';
 
 import {MatDialogModule} from '@angular/material/dialog';
 import { CoursedialogComponent } from './duo/coursedialog/coursedialog.component';
-import { MatDividerModule } from '@angular/material';
+import { MatDividerModule, MatCardModule } from '@angular/material';
 import { ResetService } from './reset.service';
 
 
@@ -45,7 +45,8 @@ import { ResetService } from './reset.service';
     FlexLayoutModule,
     RouterModule,
     MatDialogModule,
-    MatDividerModule
+    MatDividerModule,
+    MatCardModule
   ],
   providers: [HeaderService, ResetService],
   bootstrap: [AppComponent],
