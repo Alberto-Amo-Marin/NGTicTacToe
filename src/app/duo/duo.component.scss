@@ -35,6 +35,7 @@ span {
 
 .uk-card {
     width: 30%;
+    border: 1px solid black;
 }
 
 .uk-card-default {
@@ -49,6 +50,11 @@ span {
 
 .game-title {
     text-align: center;
+}
+
+.mat-card {
+    box-shadow: none !important;
+    margin: 2px;
 }
 
 

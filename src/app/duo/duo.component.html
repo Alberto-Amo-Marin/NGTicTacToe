@@ -9,27 +9,27 @@
   <div class="game-board" fxLayout="column">
     <h1 class="game-title">Game Board</h1>
     <div fxLayout="row" class="game-row" fxLayoutAlign="center">
-      <div id="b1" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card uk-card-default uk-card-body game-block"></div>
-      <div id="b2" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card uk-card-default uk-card-body game-block"></div>
-      <div id="b3" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card uk-card-default uk-card-body game-block"></div>
+      <mat-card id="b1" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card game-block"></mat-card>
+      <mat-card id="b2" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card game-block"></mat-card>
+      <mat-card id="b3" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card game-block"></mat-card>
     </div>
-    
+
     <div fxLayout="row" class="game-row" fxLayoutAlign="center">
-      <div id="b4" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card uk-card-default uk-card-body game-block"></div>
-      <div id="b5" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card uk-card-default uk-card-body game-block"></div>
-      <div id="b6" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card uk-card-default uk-card-body game-block"></div>
+      <mat-card id="b4" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card game-block"></mat-card>
+      <mat-card id="b5" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card game-block"></mat-card>
+      <mat-card id="b6" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card game-block"></mat-card>
     </div>
-  
+
     <div fxLayout="row" class="game-row" fxLayoutAlign="center">
-      <div id="b7" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card uk-card-default uk-card-body game-block"></div>
-      <div id="b8" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card uk-card-default uk-card-body game-block"></div>
-      <div id="b9" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card uk-card-default uk-card-body game-block"></div>
+      <mat-card id="b7" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card game-block"></mat-card>
+      <mat-card id="b8" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card game-block"></mat-card>
+      <mat-card id="b9" (drop)="drop($event)" (dragover)="allowDrop($event)" class="uk-card game-block"></mat-card>
     </div>
-    
+
   </div>
 
   <div class="o-shape" fxLayout="column" fxLayoutAlign="center center">
-      <h1>Player 2</h1>
+    <h1>Player 2</h1>
     <span id="o1" [draggable]="move_y" (dragstart)="drag($event)">🔵</span>
     <span id="o2" [draggable]="move_y" (dragstart)="drag($event)">🔵</span>
     <span id="o3" [draggable]="move_y" (dragstart)="drag($event)">🔵</span>

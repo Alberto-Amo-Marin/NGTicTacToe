@@ -1,12 +1,21 @@
 .div-body {
     height: 18%;
     background-color: lightgray;
+    
 
 }
 
+.body-total {
+    width: 100%;
+    height: 90%;
+    background-image: url('../../assets/background.jpg');
+    background-size: 100% 100%;
+    
+}
+
 .div-body2 {
-    height: 72%;
-    background-color: lightgray;
+    height: 100%;
+    
 }
 
 .div-btn {
@@ -17,7 +26,8 @@
 }
 
 .btn {
-    height: 25%;
+    height: 5%;
     width: 25%;
-    margin-top: 5%;
+    margin-top: 1%;
+    margin-bottom: 5%;
 }
